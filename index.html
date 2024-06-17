@@ -3,177 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince Enhancer</title>
+    <title>Splash Screen</title>
     <style>
-        /* Reset default margin and padding */
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom,
+            green,lightgreen, orange);
+            /* Add your desired colorful background */
         }
 
-        /* Set background image */
-        body {
-            background-image: url('loo1.png');
-            background-size: cover;
-            font-family: 'Roboto', sans-serif;
+        .splash-screen {
+            text-align: center;
+            color: white;
         }
 
-        /* Navigation bar styles */
-        .navbar {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #ffffff;
-            padding: 40px;
-           
-        }
-
-        /* Circular profile picture */
-        .profile-pic {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            border-radius: 50%;
-            border: 1px solid red;
-            width: 50px;
-            height: 50px;
-            margin: 10px auto;
-            background-image: url('pfp.png');
-            background-size: cover;
-           
-        }
-
-
-        /* Typing animation */
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-
-        .typing-text {
-            
+        .logo {
             position: fixed;
-            top: 52px;
-            left: 252px;
-            font-size:5px;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 4s steps(65)
-            infinite alternate;
-        }
-        #heading{
-          
-            Position: fixed;
-            top: 24px;
-            left: 64px;
-            font-size:26px;
-            overflow: hidden;
-            white-space: nowrap;
-          
+            top: 110px;
+            left: 50px;
+            width: 300px;
+            height: 300px;
         }
 
+        .app-name {
+            position: fixed;
+            left: 50px;
+            top: 350px;
+            font-size: 24px;
+            margin: 10px 0;
+        }
 
-  
-    
-    img{
-      width:50px;
-      height: 50px;
-    }
-    
-    #name{
-      position: absolute;
-      top:5px;
-      
-    }
-    
- 
-
-
-#video {
-  position: absolute;
-  top: 90px;
-  left: 8px;
-  width: 370px;
-  height: 210px;
-  border-radius: 15px;
-  border: 2px solid red;
-  box-shadow: 5px 5px 5px black;
+        .creator-name {
+            position: fixed;
+            left: 150px;
+            bottom: 20px;
+            font-size: 18px;
+        }
+          
+        .app-name {
+          color: white;
+           text-shadow: 1px 1px 0px Orange, -1px -1px 0px Green; /* Add colors and spacing as per your requirement */
 }
+    
 
 
-
-#Button1{
-  position: fixed;
-  top: 360px;
-  left: 20px;
-  width:350px;
-  height: 50px;
-  border-radius:10px;
-  color: White;
-  background: green;
-  font-weight:Bold;
-  font-size: 15px;
-  
-  
-}
-
-
-    </style>
+</style>
 </head>
 <body>
-    <div class="navbar">
-        <h1 id="heading">EID_UL_ADHA GIVEAWAY </h1>
-        <h1 class="typing-text" id="c-c">FOUNDER PRINCE ZAIN</h1>
-        <div class="profile-pic"></div>
-    </div>
-    
-    <div class="video-container" style="background-image:url('thumb.jpg')"></div>
-      
-  <iframe id="video" src="paypal.mp4"  frameborder="0" allowfullscreen>
-   
-  </iframe>
+<div class="splash-screen">
+<img src="logo.png" alt="Logo" class="logo">
+<h1 class="app-name">PRINCE PHOTO ENHENCER</h1>
+<h2 class="creator-name"></h2>
 </div>
 
+<script>
+window.addEventListener('load', function() {
+const creatorName = document.querySelector('.creator-name');
 
-  
-    <button id="Button1" type="submit">JOIN OUR CHANNEL LINK</button>
-      
-    
+const typewriter = (text, i) => {
+if (i < text.length) {
+creatorName.innerHTML += text.charAt(i);
+i++;
+setTimeout(typewriter, 100, text, i);
+}
+};
 
-  <script>
-    
-    
+setTimeout(() => {
+typewriter('PRINCE ZAIN', 0); // Change 'Creator Name' with your desired creator name
+}, 1000); // 5-second interval
 
-
-
-const button1 = document.getElementById('Button1');
-
-button1.addEventListener('click', () => {
-  window.location.href = 'https://whatsapp.com/channel/0029VaVNWhI3wtb6DPN50l1C';
+setTimeout(() => {
+window.location.href = "Final.html"; // Redirect to final.html after 5 seconds
+}, 3000);
 });
-
-
-    <!-- Add JavaScript for button click redirection if needed -->
-
-    const heading = document.getElementById('c-c');
-    let colors = ['White','red'];
-    let currentColorIndex = 0;
-
-    function changeColor() {
-        heading.style.color = colors[currentColorIndex];
-        currentColorIndex = (currentColorIndex + 1) % colors.length;
-    }
-
-    setInterval(changeColor, 500); // Change color every second (1000ms)
-
-    
-
-
-
-        </script>
-
+</script>
 </body>
 </html>
