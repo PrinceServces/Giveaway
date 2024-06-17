@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Enhancer</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set background image */
+        body {
+            background-image: url('loo1.png');
+            background-size: cover;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 40px;
+           
+        }
+
+        /* Circular profile picture */
+        .profile-pic {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border-radius: 50%;
+            border: 1px solid red;
+            width: 50px;
+            height: 50px;
+            margin: 10px auto;
+            background-image: url('pfp.png');
+            background-size: cover;
+           
+        }
+
+
+        /* Typing animation */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .typing-text {
+            
+            position: fixed;
+            top: 52px;
+            left: 252px;
+            font-size:5px;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 4s steps(65)
+            infinite alternate;
+        }
+        #heading{
+          
+            Position: fixed;
+            top: 24px;
+            left: 64px;
+            font-size:26px;
+            overflow: hidden;
+            white-space: nowrap;
+          
+        }
+
+
+  
+    
+    img{
+      width:50px;
+      height: 50px;
+    }
+    
+    #name{
+      position: absolute;
+      top:5px;
+      
+    }
+    
+ 
+
+
+#video {
+  position: absolute;
+  top: 90px;
+  left: 8px;
+  width: 370px;
+  height: 210px;
+  border-radius: 15px;
+  border: 2px solid red;
+  box-shadow: 5px 5px 5px black;
+}
+
+
+
+#Button1{
+  position: fixed;
+  top: 360px;
+  left: 20px;
+  width:350px;
+  height: 50px;
+  border-radius:10px;
+  color: White;
+  background: green;
+  font-weight:Bold;
+  font-size: 15px;
+  
+  
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="heading">EID_UL_ADHA GIVEAWAY </h1>
+        <h1 class="typing-text" id="c-c">FOUNDER PRINCE ZAIN</h1>
+        <div class="profile-pic"></div>
+    </div>
+    
+    <div class="video-container" style="background-image:url('thumb.jpg')"></div>
+      
+  <iframe id="video" src="paypal.mp4"  frameborder="0" allowfullscreen>
+   
+  </iframe>
+</div>
+
+
+  
+    <button id="Button1" type="submit">JOIN OUR CHANNEL LINK</button>
+      
+    
+
+  <script>
+    
+    
+
+
+
+const button1 = document.getElementById('Button1');
+
+button1.addEventListener('click', () => {
+  window.location.href = 'https://whatsapp.com/channel/0029VaVNWhI3wtb6DPN50l1C';
+});
+
+
+    <!-- Add JavaScript for button click redirection if needed -->
+
+    const heading = document.getElementById('c-c');
+    let colors = ['White','red'];
+    let currentColorIndex = 0;
+
+    function changeColor() {
+        heading.style.color = colors[currentColorIndex];
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+    }
+
+    setInterval(changeColor, 500); // Change color every second (1000ms)
+
+    
+
+
+
+        </script>
+
+</body>
+</html>
